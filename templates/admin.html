@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <h2>Available Flights</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Flight ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flight in flights %}
+            <tr>
+                <td>{{ flight }}</td>
+                <td>{{ flights[flight].name }}</td>
+                <td>{{ flights[flight].date }}</td>
+                <td>{{ flights[flight].time }}</td>
+                <td><a href="/remove_flight/{{ flight }}">Remove</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
